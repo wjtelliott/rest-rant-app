@@ -12,7 +12,7 @@ REST-rant is an app where users can review restaurants.
 
 ***
 
-## Places data
+## Places data structure
 
 We will include the following in our mock places data:
 
