@@ -6,7 +6,7 @@ const indexPage = ({data}) => {
     let formattedPlaceCards = data.map( e => {
         return (
             <div key={`${e.name}Card`} id='card'>
-                <p key={`${e.name}Paragraph`}>{e.name}</p>
+                <p key={`${e.name}Paragraph`}><a href={`/places/place?index=${e.uid}`}>{e.name}</a></p>
                 <img key={`${e.name}Image`} src={e.pic} alt={e.name}/>
             </div>
         )

@@ -23,6 +23,7 @@ We will include the following in our mock places data:
 | state | String |
 | cuisines | String |
 | pic | String |
+| uid | Number |
 
 ***
 
