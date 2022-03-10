@@ -15,11 +15,14 @@ REST-rant is an app where users can review restaurants.
 ## Places data
 
 We will include the following in our mock places data:
-- name AS String
-- city AS String
-- state AS String
-- cuisines AS String
-- pic AS String
+
+| Place Data | Data Type |
+| ---------- | --------- |
+| name | String |
+| city | String |
+| state | String |
+| cuisines | String |
+| pic | String |
 
 ***
 
