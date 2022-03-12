@@ -25,6 +25,6 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/new', (req, res) => res.status(206).render('places/new'));
+router.get('/new', (req, res) => res.status(206).render('places/index', {data: db}));
 
 module.exports = router;
