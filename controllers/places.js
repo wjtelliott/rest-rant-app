@@ -18,10 +18,13 @@ router.get('/', (req, res) => {
         else {
             let uid = getDatabaseData(index);
             uid !== -1 ?
-                req.query?.json != null ? res.status(200).send(db[uid]) : res.status(206).render('places/placeDetails', { data: db[uid] })
+                req.query?.json != null ? res.status(200).send(db[uid]) : res.status(206).render('places/read', { data: db[uid] })
                 : res.status(404).render('error404', {errorMsg: `Unable to find the place index specified.`});
         }
     }
 })
+
+
+router.get('/new', (req, res) => res.status(206).render('places/new'));
 
 module.exports = router;
