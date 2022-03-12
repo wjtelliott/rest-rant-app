@@ -3,9 +3,12 @@ const Default = require('./default');
 
 const homePage = () => {
     return (
-        <Default title='Home Page'>
+        <Default>
+            <head>
+                <link rel='stylesheet' href='css/bstraplite.css'/>
+            </head>
             <main>
-                <h1>Home Page</h1>
+                <h1 className='ta-c ft-4'>Home Page</h1>
             </main>
         </Default>
     );

@@ -1,0 +1,44 @@
+.m-a {
+    margin: auto;
+}
+
+.ta-c {
+    text-align: center;
+}
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+.card {
+    width: 20%;
+    height: 25%;
+    padding: 3em;
+    border: 3px solid black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px black;
+    margin: 2em;
+}
+
+.ft-2 {
+    font-size: 1.5em;
+}
+
+.ft-3 {
+    font-size: 2em;
+}
+
+.ft-4 {
+    font-size: 3em;
+}
+
+.img-w {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

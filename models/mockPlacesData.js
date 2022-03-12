@@ -1,6 +1,6 @@
 module.exports = [
     {
-        name: 'Place1',
+        name: 'Maui',
         city: 'My City',
         state: 'My State',
         cuisines: 'BeeseChurger',
@@ -9,12 +9,39 @@ module.exports = [
         archived: false
     },
     {
-        name: 'Place2',
+        name: 'Maui, Again',
         city: 'My City2',
         state: 'My State2',
         cuisines: 'BeeseChurger2',
         pic: 'https://a.cdn-hotels.com/gdcs/production54/d1246/2a4051b0-2b61-4d80-8687-880705a77600.jpg?impolicy=fcrop&w=1600&h=1066&q=medium',
         uid: 1,
         archived: false
-    }
+    },
+    {
+        name: 'Hawaii',
+        city: 'My City2',
+        state: 'My State2',
+        cuisines: 'BeeseChurger2',
+        pic: 'https://www.gohawaii.com/sites/default/files/styles/image_gallery_bg_xl/public/hero-unit-images/10316%202.jpg?itok=l-iF3eE0',
+        uid: 2,
+        archived: false
+    },
+    {
+        name: 'Hawaii Horse Trail',
+        city: 'My City2',
+        state: 'My State2',
+        cuisines: 'BeeseChurger2',
+        pic: 'https://www.gohawaii.com/sites/default/files/styles/narrow_carousel_large/public/content-carousel-images/07979.jpg?itok=m-MumPZY',
+        uid: 3,
+        archived: false
+    },
+    {
+        name: 'Hawaii Landscape',
+        city: 'My City2',
+        state: 'My State2',
+        cuisines: 'BeeseChurger2',
+        pic: 'https://www.gohawaii.com/sites/default/files/styles/narrow_carousel_large/public/content-carousel-images/Molokai%20Kalaupapa%20Coast%20aerial.jpg?itok=U9LXGaFx',
+        uid: 4,
+        archived: false
+    },
 ];

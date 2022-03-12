@@ -11,7 +11,8 @@ const app = express();
 const logEvent = require('./assets/logEvents');
 const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 

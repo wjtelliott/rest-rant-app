@@ -2,6 +2,11 @@ const router = require('express').Router();
 
 const db = require('../models/mockPlacesData');
 
+
+const handle404 = errorMsg => {
+    
+}
+
 // TODO: Create new function for 404 handling
 router.get('/', (req, res) => {
     //* I know people won't like this init in the IF
@@ -11,7 +16,7 @@ router.get('/', (req, res) => {
         else {
             let uid = -1;
             for (let i = 0; i < db.length; i++) if (Number(db[i].uid) === Number(index)) { uid = db.indexOf(db[i]); break; }
-            uid !== -1 ? res.status(206).render('places/placeDetails', { data: db[uid] }) : res.status(404).render('error404');
+            uid !== -1 ? res.status(206).render('places/placeDetails', { data: db[uid] }) : res.status(404).render('error404', {errorMsg: `Unable to find the place index specified.`});
         }
     }
 })
