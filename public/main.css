@@ -1,0 +1,54 @@
+/* Header & Footer */
+header, footer {
+    width: 80%;
+    background-color: #343434;
+    color: #FFF;
+    padding: 2em 1em 2em 1em;
+    margin: auto;
+}
+
+header {
+    border-radius: 0px 0px 40px 40px;
+}
+header h1 {
+    display: inline-block;
+    text-align: left;
+    width: 25%;
+}
+header ul {
+    display: inline-block;
+    width: 65%;
+    list-style: none;
+    text-align: right;
+    justify-items: stretch;
+}
+header li {
+    display: inline;
+}
+header li a {
+    transition: 1s;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 0em 1em 0em 1em;
+}
+header li a:hover {
+    font-size: 2.1em;
+    padding: 0em;
+}
+
+footer {
+    width: 100%;
+    text-align: justify;
+}
+
+/* HTML Tags */
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 2em;
+}
+h3, h4, h5, h6 {
+    font-size: 1.5em;
+}
