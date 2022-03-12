@@ -2,6 +2,48 @@
     margin: auto;
 }
 
+.bg-b {
+    background-color: black;
+}
+
+.c-w {
+    color: white;
+    text-decoration: none;
+}
+
+.tc-l {
+    text-align: left;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.hero {
+    z-index: -999;
+    width: 90%;
+    position: fixed;
+    top: 0;
+    transform: translate(4%);
+    filter: sepia(100%) blur(10px);
+}
+
+.tc-w {
+    color: white;
+}
+
+.db {
+    display: block;
+}
+
 .ta-c {
     text-align: center;
 }
@@ -18,7 +60,13 @@ img {
     border: 3px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 10px black;
+    background-color: black;
     margin: 2em;
+}
+
+.card .cardTitle {
+    text-align: left;
+    font-size: 1.5em;
 }
 
 .ft-2 {

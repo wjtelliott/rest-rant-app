@@ -6,8 +6,8 @@ const indexPage = ({data}) => {
     let formattedPlaceCards = data.map( e => {
         return (
             <div key={`${e.name}Card`} id='card' className='card ta-c'>
-                <p key={`${e.name}Paragraph`}><a className='ft-2' href={`/places?index=${e.uid}`}>{e.name}</a></p>
-                <img key={`${e.name}Image`} src={e.pic} alt={e.name} className='img-w'/>
+                <p className='cardTitle' key={`${e.name}Paragraph`}><a className='ft-2 c-w' href={`/places?index=${e.uid}`}>{e.name}</a></p>
+                <img onClick={`/places?index=${e.uid}`} key={`${e.name}Image`} src={e.pic} alt={e.name} className='img-w'/>
             </div>
         )
     });
