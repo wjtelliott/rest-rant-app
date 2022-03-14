@@ -4,8 +4,8 @@ const Default = require('../default');
 const indexPage = ({data}) => {
 
     let formattedPlaceCards = data.map( e => {
-        return (
-            <div key={`${e.name}Card`} id='card' className='card ta-c'>
+        return e?.archived ? null : (
+            <div key={`${e.name}Card`} id='card' className='card w-40 ta-c m-a'>
                 <p className='cardTitle' key={`${e.name}Paragraph`}><a className='ft-2 c-w' href={`/places?index=${e.uid}`}>{e.name}</a></p>
                 <img onClick={`/places?index=${e.uid}`} key={`${e.name}Image`} src={e.pic} alt={e.name} className='img-w'/>
             </div>

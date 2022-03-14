@@ -3,7 +3,7 @@ header, footer {
     width: 80%;
     background-color: #343434;
     color: #FFF;
-    padding: 2em 1em 2em 1em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     margin: auto;
 }
 
@@ -13,6 +13,7 @@ header {
 header h1 {
     display: inline-block;
     text-align: left;
+    padding-left: 1em;
     width: 25%;
 }
 header ul {

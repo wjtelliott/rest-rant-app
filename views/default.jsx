@@ -10,11 +10,12 @@ const Default = html => {
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>{html.title ?? 'REST-Rant'}</title>
-            <link rel='stylesheet' href='css/main.css'/>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></link>
+            <link rel='stylesheet' href='/css/main.css'/>
         </head>
         <body>
-            <header>
-                <h1>REST-Rant</h1>
+            <header className='d-s'>
+                <h1 className='ptb-1'>REST-Rant</h1>
                 <NavBar></NavBar>
             </header>
             {html.children}

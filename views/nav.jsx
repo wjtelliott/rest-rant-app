@@ -8,7 +8,7 @@ const navBar = () => {
         {path: '/', text: 'Contact Us*'},
     ];
     return (
-        <ul>{navLinks.map(e => (<li><a href={e.path}>{e.text}</a></li>))}</ul>
+        <ul>{navLinks.map(e => (<li><a className='c-w' href={e.path}>{e.text}</a></li>))}</ul>
     );
 };
 

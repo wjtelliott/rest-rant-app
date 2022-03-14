@@ -1,3 +1,7 @@
+body {
+    background-color: #adadad;
+}
+
 .m-a {
     margin: auto;
 }
@@ -11,20 +15,46 @@
     text-decoration: none;
 }
 
+.c-w:hover {
+    color: red;
+    text-decoration: none;
+}
+
 .tc-l {
     text-align: left;
 }
 
-.w-50 {
-    width: 50%;
+.d-i {
+    display: inline;
+}
+
+.w-30 {
+    width: 30%;
 }
 
 .w-40 {
     width: 40%;
 }
 
+.w-50 {
+    width: 50%;
+}
+
 .w-60 {
     width: 60%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.d-s {
+    position: sticky;
+    top: 0;
+}
+
+.d-ib {
+    display: inline-block;
 }
 
 .hero {
@@ -54,9 +84,9 @@ img {
 }
 
 .card {
-    width: 20%;
-    height: 25%;
-    padding: 3em;
+    /* width: 20%;
+    height: 25%; */
+    padding: 2em;
     border: 3px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 10px black;
@@ -67,6 +97,18 @@ img {
 .card .cardTitle {
     text-align: left;
     font-size: 1.5em;
+}
+
+.ptb-1 {
+    padding: .3em 0em .3em 1em;
+}
+
+.ptb-2 {
+    padding: 1em 1em 1em 1em;
+}
+
+.plr-2 {
+    padding: 0em 1em 0em 1em;
 }
 
 .ft-2 {
@@ -85,8 +127,12 @@ img {
     width: 100%;
 }
 
+.va {
+    vertical-align: middle;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content:center;
 }
