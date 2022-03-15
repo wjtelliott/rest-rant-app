@@ -35,13 +35,15 @@ We will include the following in our mock places data:
 | GET | `/places` | Places index page |
 | POST | `/places` | Create new place |
 | GET | `/places/new` | Form page for creating a new place |
-| GET | `/places?index=id[&json]` | Details about particular place |
+| GET | `/places?index=id[&json=userToken]` | Details about particular place |
 | PUT | `/places?index=id` | Update a particular place |
 | DELETE | `/places?index=id` | Delete a particular place |
-| GET | `/places/:id/edit` | Form page for editing an existing place |
-| POST | `/places/:id/rant` | Create a rant (comment) about a particular place |
-| DELETE | `/places/:id/rant/:rantId` | Delete a rant (comment) about a particular place |
+| GET | `/places/edit?index=id` | Form page for editing an existing place |
+| POST | `/places/:id/rant *` | Create a rant (comment) about a particular place |
+| DELETE | `/places/:id/rant/:rantId * ` | Delete a rant (comment) about a particular place |
 | GET | `*` | 404 Page |
 | ---------- | ------------------- | ------------------------------- |
-| GET | `/places/:id *` | Details about particular place |
-*Obsolete
+| GET | `/places/:id **` | Details about particular place |
+
+| * | Not yet implemented |
+| ** | Obsolete / deprecated |

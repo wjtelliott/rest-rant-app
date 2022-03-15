@@ -5,15 +5,37 @@ const getDatabaseData = (index, db) => {
     return db[uid]?.archived ? -1 : uid;
 }
 
-const formatJsonData = data => {
-    // We shouldn't get this far with archived data. Double check just in case.
-    if (data?.archived) return { data: 'removed' };
+const saveData = (res, db, index, userData) => {
     
-    
-    /**
-     * We can use this to format which data our users are allowed access to 
-     * by adding its key to the returnData object
-     */
+    // Do not edit uid, archived properties
+    let newData = db[index];
+
+    newData.name = userData.name || newData.name;
+    newData.pic = userData.pic || newData.pic;
+    newData.city = userData.city || newData.city;
+    newData.state = userData.state || newData.state;
+    newData.cuisines = userData.cuisines || newData.cuisines;
+
+    // TODO: This should be returned & NOT edit as a param
+    db[index] = newData;
+
+    res.status(200).redirect('/places');
+}
+
+const formatJsonData = (data, token) => {
+
+    let tokenDB = {
+        'token': {
+            isAdmin: false
+        },
+        'token2': {
+            isAdmin: true
+        }
+    }
+
+    // Check valid token
+    if (tokenDB[token] == undefined) return { data: '403 unauthorized access' };
+
     let returnData = {
         name: '',
         city: '',
@@ -21,14 +43,21 @@ const formatJsonData = data => {
         cuisines: '',
         pic: ''
     };
+
+    if (tokenDB[token].isAdmin) {
+        returnData.archived = '';
+        returnData.uid = '';
+    }
+
     for (const [key, value] of Object.entries(data)) if (returnData[key] != null) returnData[key] = value;
     return returnData;
 }
 
-const render404 = (res, msg) => {
+const render404 = (res, msg, json = false) => {
+    if (json) return res.status(404).send({'data':'404 unknown json endpoint'})
     if (msg != null) return res.status(404).render('error404', {errorMsg: msg});
     res.status(404).render('error404')
 }
 
 
-module.exports = {getDatabaseData, formatJsonData, render404};
+module.exports = {getDatabaseData, formatJsonData, render404, saveData};

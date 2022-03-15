@@ -21,10 +21,11 @@ const detailsPage = ({data, id}) => {
                 </div>
 
                 <div className='container ta-c'>
-                    <a href={`/places/${id}/edit`} className='btn btn-warning ft-2'>Edit</a>
-                    <form method='POST' action={`/places/${id}?_method=DELETE`}>
+                    <a href={`/places/edit?index=${id}`} className='btn btn-warning ft-2'>Edit</a>
+                    <form method='POST' action={`/places?index=${id}&_method=DELETE`}>
                         <button type='submit' className='btn btn-danger ft-2'>Delete</button>
                     </form>
+                    <a href={`/places?index=${id}&json=token`} className='btn btn-primary ft-2'>JSON - Standard Token</a>
                 </div>
             </main>
         </Default>
