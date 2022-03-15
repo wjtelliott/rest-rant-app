@@ -21,19 +21,12 @@ const saveData = (res, db, index, userData) => {
     
     process.env.db = JSON.stringify(db);
 
-    res.status(200).redirect('/places');
+    res.status(200).redirect(`/places?index=${index}`);
 }
 
 const formatJsonData = (data, token) => {
 
-    let tokenDB = {
-        'token': {
-            isAdmin: false
-        },
-        'token2': {
-            isAdmin: true
-        }
-    }
+    let tokenDB = JSON.parse(process.env.tokens);
 
     // Check valid token
     if (tokenDB[token] == undefined) return { data: '403 unauthorized access' };

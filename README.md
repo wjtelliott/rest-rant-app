@@ -45,5 +45,7 @@ We will include the following in our mock places data:
 | ---------- | ------------------- | ------------------------------- |
 | GET | `/places/:id **` | Details about particular place |
 
+| Symbol | Purpose |
+| ----- | ----- |
 | * | Not yet implemented |
 | ** | Obsolete / deprecated |
