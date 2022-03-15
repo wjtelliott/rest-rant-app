@@ -5,7 +5,7 @@ const error404 = ({errorMsg}) => {
     return (
         <Default title='REST-Rant/404'>
             <head>
-                <link rel='stylesheet' href='css/bstraplite.css'/>
+                <link rel='stylesheet' href='/css/bstraplite.css'/>
             </head>
             <main class='m-a ta-c'>
                 <h1>404: PAGE NOT FOUND</h1>

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const db = require('../models/mockPlacesData');
+let db = require('../models/mockPlacesData');
 
 const util = require('../assets/controllerUtil');
 
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         else {
             let uid = util.getDatabaseData(index, db);
             uid !== -1 ?
-                req.query?.json != null ? res.status(200).send(util.formatJsonData(db[uid])) : res.status(206).render('places/read', { data: db[uid] })
+                req.query?.json != null ? res.status(200).send(util.formatJsonData(db[uid])) : res.status(206).render('places/read', { data: db[uid], id: uid })
                 : util.render404(res, `Unable to find the place index specified.`);
         }
     }
@@ -35,6 +35,16 @@ router.post('/', (req, res) => {
     db.push(newVal);
 
     res.redirect(302, '/places');
+});
+
+router.delete('/:id', (req, res) => {
+    if ((index = req.params?.id) == null) util.render404(res);
+    else if (isNaN(index)) util.render404(res);
+    else if ((indexData = util.getDatabaseData(index, db)) === -1) util.render404(res, `Could not find index specified`);
+    else {
+        db[indexData].archived = true;
+        return res.status(200).redirect('/places');
+    }
 });
 
 router.get('/new', (req, res) => res.status(206).render('places/new'));
