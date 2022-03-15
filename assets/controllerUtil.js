@@ -18,6 +18,8 @@ const saveData = (res, db, index, userData) => {
 
     // TODO: This should be returned & NOT edit as a param
     db[index] = newData;
+    
+    process.env.db = JSON.stringify(db);
 
     res.status(200).redirect('/places');
 }
