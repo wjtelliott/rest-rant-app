@@ -23,7 +23,10 @@ app.engine('jsx', require('express-react-views').createEngine());
 // Routing
 app.use('/places', require('./controllers/places'));
 app.get('/', (req, res) => res.status(206).render('home'));
-app.get('*', (req, res) => res.status(404).render('error404'));
+app.get('*', (req, res) => {
+    logEvent('404 has been caught in main dir', 2, 1);
+    res.status(404).render('error404')
+});
 
 
 // Server launcher

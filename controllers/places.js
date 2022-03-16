@@ -32,10 +32,11 @@ module.exports = router;
 
 //! -------------- Deprecated routing, Moved to new files ------------------
 
+//*I'm just keeping these here for my sanity if anything breaks
 // router.delete('/', (req, res) => {
 //     if ((index = req.query?.index) == null) util.render404(res);
 //     else if (isNaN(index)) util.render404(res);
-//     else if ((indexData = util.getDatabaseData(index, db)) === -1) util.render404(res, `Could not find index specified`);
+//     else if ((indexData = util.getDatabaseIndex(index, db)) === -1) util.render404(res, `Could not find index specified`);
 //     else {
 //         db[indexData].archived = true;
 //         process.env.db = JSON.stringify(db);
@@ -58,13 +59,13 @@ module.exports = router;
 
 //     db.push(newVal);
 
-//     res.redirect(302, '/places');
+//     res.redirect('/places');
 // });
 
 // router.put('/', (req, res) => {
 //     if (((index = req.query?.index) == null) ||
 //         isNaN(index) ||
-//         (indexData = util.getDatabaseData(index, db)) === -1) return util.render404(res, 'Could not find index specified');
+//         (indexData = util.getDatabaseIndex(index, db)) === -1) return util.render404(res, 'Could not find index specified');
 //     else util.saveData(res, db, indexData, req.body);
 // });
 
@@ -74,7 +75,7 @@ module.exports = router;
 //     if ((index = req.query?.index) == null) return res.status(206).render('places/index', { data: db });
 //     if (isNaN(Number(index))) return util.render404(res, req.query?.json ?? false);
 
-//     let uid = util.getDatabaseData(index, db);
+//     let uid = util.getDatabaseIndex(index, db);
 
 //     uid !== -1 ?
 //         req.query?.json != null ?
@@ -86,6 +87,6 @@ module.exports = router;
 // router.get('/edit', (req, res) => {
 //     if (((index = req.query?.index) == null) ||
 //         isNaN(index) ||
-//         (indexData = util.getDatabaseData(index, db)) === -1) return util.render404(res, 'Could not find index specified');
+//         (indexData = util.getDatabaseIndex(index, db)) === -1) return util.render404(res, 'Could not find index specified');
 //     else res.status(206).render('places/update', {data: db[indexData]});
 // });

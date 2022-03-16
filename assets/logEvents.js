@@ -14,5 +14,5 @@ module.exports = (text, type = 0, reset = true) => {
         case 3: // Red
             colorCode = '\u001b[31m';
     }
-    console.log(`${colorCode}${text}${reset ? '\u001b[37m' : ''}`);
+    console.log(`[Server] ${colorCode}${text}${reset ? '\u001b[37m' : ''}`);
 };
