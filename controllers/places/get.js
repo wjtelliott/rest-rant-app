@@ -6,7 +6,7 @@ const homePage = (req, res) => {
     if ((index = req.query?.index) == null) return res.status(206).render('places/index', { data: db });
     if (isNaN(Number(index))) return util.render404(res, req.query?.json ?? false);
 
-    let uid = util.getDatabaseIndex(index, db);
+    let uid = util.getDatabaseIndex(index, db, req.query?.json);
     uid !== -1 ?
         req.query?.json != null ?
             res.status(200).send(util.formatJsonData(db[uid], req.query.json))

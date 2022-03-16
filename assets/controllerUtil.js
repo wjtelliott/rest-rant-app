@@ -1,9 +1,9 @@
 const logEvent = require('./logEvents');
 
-const getDatabaseIndex = (index, db) => {
+const getDatabaseIndex = (index, db, json = false) => {
     let uid = -1;
     for (let i = 0; i < db.length; i++) if (Number(db[i].uid) === Number(index)) { uid = db.indexOf(db[i]); break; }
-    return db[uid]?.archived ? -1 : uid;
+    return json || false ? uid : db[uid]?.archived ? -1 : uid;
 }
 
 const saveData = (res, db, index, userData) => {
@@ -38,13 +38,14 @@ const formatJsonData = (data, token) => {
 
     let tokenDB = JSON.parse(process.env.tokens);
 
+    // If we have authoring priv token, give the whole JSON
+    if (tokenDB[token]?.isAuthor) return data;
+
     // Check valid token
-    if (tokenDB[token] == undefined) {
+    if (tokenDB[token] == undefined || (!tokenDB[token].isAdmin && data.archived)) {
         logEvent(`Unauthorized JSON request '${token}'`, 2, 1)
         return { data: '403 unauthorized access' };
     }
-
-    if (tokenDB[token].isAuthor) return data;
 
     let returnData = {
         name: '',

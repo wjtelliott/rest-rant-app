@@ -30,6 +30,4 @@ app.get('*', (req, res) => {
 
 
 // Server launcher
-app.listen(process.env.PORT, () => {
-    logEvent('Server is launching...', 1, 1);
-});
+app.listen(process.env.PORT, () => logEvent('Server is launching...', 1, 1));
