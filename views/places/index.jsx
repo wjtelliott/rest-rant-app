@@ -2,15 +2,18 @@ const React = require('react');
 const Default = require('../default');
 
 const indexPage = ({data}) => {
-
-    let formattedPlaceCards = data.map( e => {
+    
+    let formattedPlaceCards = data?.map( e => {
         return e?.archived ? null : (
             <div key={`${e.name}Card`} id='card' className='card w-40 ta-c m-a'>
-                <p className='cardTitle' key={`${e.name}Paragraph`}><a className='ft-2 c-w' href={`/places?index=${e.uid}`}>{e.name}</a></p>
-                <img onClick={`/places?index=${e.uid}`} key={`${e.name}Image`} src={e.pic} alt={e.name} className='img-w'/>
+                <p className='cardTitle' key={`${e.name}Paragraph`}><a className='ft-2 c-w' href={`/places?index=${e.id}`}>{e.name}</a></p>
+                <img src={e.pic} alt={e.name} className='img-w'/>
             </div>
         )
     });
+
+    let noData = (<h2>No Place Data!</h2>);
+    formattedPlaceCards = formattedPlaceCards?.length < 1 ? noData : formattedPlaceCards ?? noData
 
     return (
         <Default title='REST-Rant Places'>

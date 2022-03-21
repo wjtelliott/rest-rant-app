@@ -12,7 +12,7 @@ const editPage = ({data}) => {
 
                 <h1 className='ta-c ft-4'>Edit a place</h1>
 
-                <form className='m-a ta-c ptb-2 ft-2' method='POST' action={`/places?index=${data.uid}&_method=PUT`}>
+                <form className='m-a ta-c ptb-2 ft-2' method='POST' action={`/places?index=${data.id}&_method=PUT`}>
                     <div className='container w-30'>
                         <div className='form-group w-100'>
                             <label htmlFor='name'>Place Name</label>

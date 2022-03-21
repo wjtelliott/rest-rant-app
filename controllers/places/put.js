@@ -1,10 +1,10 @@
 const util = require('../../assets/controllerUtil');
+const db = require('../../models');
 
 const updatePlace = (req, res) => {
-    if (((index = req.query?.index) == null) ||
-        isNaN(index) ||
-        (indexData = util.getDatabaseIndex(index, db = util.getDatabaseData())) === -1) return util.render404(res, 'Could not find index specified');
-    else util.saveData(res, db, indexData, req.body);
+    db.Place.updateOne({ _id: req.query?.index }, {"$set":{...req.body}})
+        .then(res.status(200).redirect(`places?index=${req.query?.index}`))
+        .catch(err => console.log(err));
 };
 
 module.exports = {updatePlace};
