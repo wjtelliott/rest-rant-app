@@ -34,6 +34,11 @@ const newPlacePage = () => {
                             <label htmlFor='cuisines'>Cuisines</label>
                             <input className='form-control' id='cuisines' name='cuisines' required />
                         </div>
+
+                        <div className='form-group w-100'>
+                            <label htmlFor='founded'>Founded</label>
+                            <input value={new Date().getFullYear()} type='number' className='form-control' id='founded' name='founded' required />
+                        </div>
                     </div>
                     <input className='btn btn-primary w-30 ft-2' type='submit' value='Add Place'/>
                 </form>

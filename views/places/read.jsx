@@ -8,11 +8,13 @@ const detailsPage = ({data}) => {
             <head><link rel='stylesheet' href='css/bstraplite.css'/></head>
             <main key={`${data.name}Main`}>
                 <div className='container w-60 ptb-2'>
-                    <div className='container m-a ta-c d-ib w-30'>
+                    <div className='container m-a ta-c d-ib w-50'>
                         <h2 className='db w-100 ft-4' key={`${data.name}Title`}>{data.name}</h2>
                         <p className='ft-2 w-100' key={`${data.city}`}>City: {data.city}</p>
                         <p className='ft-2 w-100' key={`${data.state}`}>State: {data.state}</p>
                         <p className='ft-2 w-100' key={`${data.cuisines}`}>Cuisines: {data.cuisines}</p>
+                        <hz/>
+                        <p className='ft-3 w-100'>{data.showEstablished()}</p>
                     </div>
                     <img key={`${data.name}Image`} src={data.pic} alt={data.name}/>
                 </div>

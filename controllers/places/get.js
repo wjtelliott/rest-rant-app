@@ -13,6 +13,18 @@ const homePage = (req, res) => {
     } else {
         db.Place.findById(index)
             .then( place => {
+
+                // Readable for future maintainers
+                const isJsonReq = req.query?.json != null ?? false;
+                if (place == null) util.render404(res, 'Unable to find place index specified', isJsonReq)
+                else {
+                    if (isJsonReq) res.status(200).send(util.formatJsonData(place, req.query.json))
+                    else res.status(200).render('places/read', { data: place });
+                }
+
+                return;
+
+                //! Nested tern method, same logic outcome
                 req.query?.json != null ?
                     place == null ? util.render404(res, null, true)
                     : res.status(200).send(util.formatJsonData(place, req.query.json))
