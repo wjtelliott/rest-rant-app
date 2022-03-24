@@ -12,6 +12,7 @@ const homePage = (req, res) => {
             });
     } else {
         db.Place.findById(index)
+            .populate('comments')
             .then( place => {
 
                 // Readable for future maintainers

@@ -6,3 +6,4 @@ mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology
     .catch(err => logEvent('Connection to MongoDB failed!', 3, 1));
 
 module.exports.Place = require('./placeModel');
+module.exports.Rant = require('./rant');

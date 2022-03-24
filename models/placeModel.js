@@ -13,7 +13,10 @@ const placeSchema = new Schema({
         default: 2000
         },
     pic: { type: String, default: 'https://cdn.vox-cdn.com/thumbor/NUeFZ9TtolyWpOu_-4x1QpjxtYk=/0x0:6000x4000/920x613/filters:focal(2520x1520:3480x2480):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66921789/ostia2.21.jpeg' },
-    archived: { type: Boolean, default: false }
+    archived: { type: Boolean, default: false },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'comment'
+    }]
 });
 
 placeSchema.methods.showEstablished = function() {

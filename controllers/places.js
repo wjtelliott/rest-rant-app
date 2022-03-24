@@ -18,6 +18,7 @@ router.delete('/', deletes.deletePlace);
 
 //* Posts
 router.post('/', posts.newPlace);
+router.post('/rant', posts.newRant);
 
 //* Puts
 router.put('/', puts.updatePlace);

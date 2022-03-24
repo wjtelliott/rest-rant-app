@@ -3,9 +3,49 @@ const Default = require('../default');
 
 const detailsPage = ({data}) => {
 
+    let commentData = (
+        <h3 className='inactive'>No comments yet!</h3>
+    );
+
+    if (data.comments?.length > 0) {
+        commentData = data.comments?.map( rant => {
+            return (
+                <div className='border rounded w-100 p-2 my-2'>
+                    <h2 className='rant'>{rant.rant ? 'RANT' : 'RAVE'}</h2>
+                    <h4>{rant.content}</h4>
+                    <h3><strong>- {rant.author}</strong></h3>
+                    <h4>Rating: {rant.stars}</h4>
+                </div>
+            );
+        });
+    }
+
     return (
         <Default title={`REST-Rant ${data.name}`}>
-            <head><link rel='stylesheet' href='css/bstraplite.css'/></head>
+            <head>
+                <link rel='stylesheet' href='css/bstraplite.css'/>
+                <link rel="stylesheet" href="/css/detailsPage.css" />
+            </head>
+
+
+            <div id='overlay'></div>
+            <dialog id='window' className='rounded'>
+                <form className='m-auto text-center font-size-3 justify-content-evenly' method='POST' action={`/places/rant?index=${data.id}`}>
+                    
+                    <p>Please enter your name:</p>
+                    <input className='form-control w-60 my-3 m-auto' placeholder='Enter Name' id='author' name='author'/>
+
+                    <p>Did you like this place?</p>
+                    <input className='d-inline-block form-control form-check-input my-3 m-auto' value='' type='checkbox' id='rant' name='rant'/>
+
+                    <p>How many stars do you rate this?</p>
+                    <input className='form-control w-60 my-3 m-auto' type='number' value='3' min='0' max='5' id='stars' name='stars'/>
+                    <input className='form-control w-60 my-3 m-auto' placeholder='Comment here!' id='content' name='content'/>
+                    <span id='cancelBtn' className='btn btn-danger mx-2 my-2 m-auto'>Cancel</span>
+                    <input className='btn btn-success my-2 mx-2 m-auto' value='Submit comment!' type='submit'/>
+                </form>
+            </dialog>
+
             <main key={`${data.name}Main`}>
                 <div className='container w-60 ptb-2'>
                     <div className='container m-a ta-c d-ib w-50'>
@@ -19,17 +59,22 @@ const detailsPage = ({data}) => {
                     <img key={`${data.name}Image`} src={data.pic} alt={data.name}/>
                 </div>
                 <div className='container w-100'>
-                    <p>No comments yet!</p>
+                    {commentData}
                 </div>
 
                 <div className='container ta-c'>
-                    <a href={`/places/edit?index=${data.id}`} className='btn btn-warning ft-2'>Edit</a>
+                    <a href={`/places/edit?index=${data.id}`} className='btn btn-warning btn-height-1 mx-1'>Edit</a>
                     <form method='POST' action={`/places?index=${data.id}&_method=DELETE`}>
-                        <button type='submit' className='btn btn-danger ft-2'>Delete</button>
+                        <button type='submit' className='btn btn-danger btn-height-1 mx-1'>Delete</button>
                     </form>
-                    <a href={`/places?index=${data.id}&json=token`} className='btn btn-primary ft-2'>JSON - Standard Token</a>
+                    <a href={`/places?index=${data.id}&json=token`} className='btn btn-primary btn-height-1 mx-1'>JSON - Standard Token</a>
+                    <p id='addBtn' className='btn btn-primary btn-height-1 mx-1'>Add a comment!</p>
                 </div>
+
+                
             </main>
+            <script src='/scripts/detailsPage.js'/>
+            
         </Default>
     );
 };
