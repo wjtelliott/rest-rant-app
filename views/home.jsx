@@ -18,8 +18,10 @@ const homePage = () => {
                     <div className='container m-a'>
                         <div className='card w-80'>
                             <p className='cardTitle'>This is a card title, and text about a restaurant of the week</p>
-                            <span className='d-ib w-40 plr-2 va'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, natus hic dolores dolore quod deleniti autem, unde quisquam totam temporibus necessitatibus aspernatur eius error repellendus non sunt blanditiis porro tempore.</span>
-                            <img className='d-ib w-40 plr-2' src='https://www.nsportage.com/uploads/1/2/4/3/124382046/published/lake-3-option.jpg?1550102284' alt='no image'/>
+                            <div className='container d-flex'>
+                                <span className='d-ib w-40 plr-2 va'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, natus hic dolores dolore quod deleniti autem, unde quisquam totam temporibus necessitatibus aspernatur eius error repellendus non sunt blanditiis porro tempore.</span>
+                                <img className='d-ib w-40 plr-2' src='https://www.nsportage.com/uploads/1/2/4/3/124382046/published/lake-3-option.jpg?1550102284' alt='no image'/>
+                            </div>
                         </div>
                         <div className='card w-40'>
                             <p className='cardTitle'>REST-Rant</p>

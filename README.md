@@ -6,9 +6,14 @@ REST-rant is an app where users can review restaurants.
 
 ## User Stories
 
+
+
+
 - As a user clicks on `New Place`, they will redirect to the new place form page /places/new
-- As a user submits the new place form, it will POST a new place object to our mock db
-- As a user clicks on a place, it will take them to that place's page on `/places/:id` using the place's id
+- As a user submits the new place form, it will POST a new place object to our db
+
+- As a user clicks on a place, it will take them to that place's page on `/places?index=id` using the place's mongo db ID
+
 
 ***
 
