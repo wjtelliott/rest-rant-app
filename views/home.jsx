@@ -34,6 +34,7 @@ const homePage = () => {
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus consequuntur, impedit eaque nobis corrupti quaerat totam. Ipsam repudiandae quis aliquam, dolores esse quasi exercitationem voluptatibus, dignissimos voluptates nisi sit maiores?</p>
                         </div>
                     </div>
+                    <script src='/scripts/indexPage.js'/>
                 </main>
             </body>
         </Default>

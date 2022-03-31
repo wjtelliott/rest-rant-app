@@ -15,6 +15,7 @@ const posts = require('./places/post');
 
 //* Deletes
 router.delete('/', deletes.deletePlace);
+router.delete('/rant', deletes.deleteComment);
 
 //* Posts
 router.post('/', posts.newPlace);

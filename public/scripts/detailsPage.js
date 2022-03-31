@@ -1,4 +1,6 @@
 window.onload = () => {
+
+    // New comment window
     document.querySelector('#overlay').style = 'display: none';
 
     document.querySelector('#addBtn').addEventListener('click', () => {

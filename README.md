@@ -46,7 +46,7 @@ We will include the following in our mock places data:
 | DELETE | `/places?index=id` | Delete a particular place |
 | GET | `/places/edit?index=id` | Form page for editing an existing place |
 | POST | `/places/rant?index=id` | Create a rant (comment) about a particular place |
-| DELETE | `/places/:id/rant/:rantId ** ` | Delete a rant (comment) about a particular place |
+| DELETE | `/places/rant?index=id&place=placeId` | Delete a rant (comment) about a particular place |
 | GET | `*` | 404 Page |
 | ---------- | ------------------- | ------------------------------- |
 | GET | `/places/:id ***` | Details about particular place |

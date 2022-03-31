@@ -21,9 +21,11 @@ const indexPage = ({data}) => {
                 <link rel='stylesheet' href='css/bstraplite.css'/>
             </head>
             <main key='indexMain'>
+                <img className='m-a db hero' src='https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/b8/46/6d/london-stock.jpg' alt='hero'/>
                 <p className='ta-c ft-3' key='indexParagraph'>REST-Rant Places</p>
                 <div className='container'>{formattedPlaceCards}</div>
             </main>
+            <script src='/scripts/indexPage.js'/>
         </Default>
     );
 };

@@ -55,3 +55,9 @@ h3, h4, h5, h6 {
 }
 
 .show-top { z-index: 999; }
+
+body {
+    background-color: black;
+    color: white;
+    text-shadow: 3px 3px 3px #242424;
+}

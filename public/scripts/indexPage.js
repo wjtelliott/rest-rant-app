@@ -1,0 +1,1 @@
+window.onscroll = () => document.querySelector('.hero').style = `top: ${window?.scrollY * -.125 ?? 0}px; color: red`

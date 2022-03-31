@@ -7,4 +7,15 @@ const deletePlace = (req, res) => {
         .catch(err => console.log(err));
 };
 
-module.exports = {deletePlace};
+const deleteComment = (req, res) => {
+
+
+    console.log(req.body);
+
+    // placeId = place
+    // rantId = rant
+
+    res.redirect(`/places?index=${req.body.placeId}`)
+}
+
+module.exports = {deletePlace, deleteComment};

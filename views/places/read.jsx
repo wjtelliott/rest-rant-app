@@ -15,6 +15,11 @@ const detailsPage = ({data}) => {
                     <h4>{rant.content}</h4>
                     <h3><strong>- {rant.author}</strong></h3>
                     <h4>Rating: {rant.stars}</h4>
+                    <form method='POST' action={`/places/rant?_method=DELETE`}>
+                        <input type='hidden' value={rant.id} name='rantId'/>
+                        <input type='hidden' value={data.id} name='placeId'/>
+                        <input type='submit' className='btn btn-danger' value='Delete Comment'/>
+                    </form>
                 </div>
             );
         });
@@ -26,7 +31,7 @@ const detailsPage = ({data}) => {
                 <link rel='stylesheet' href='css/bstraplite.css'/>
                 <link rel="stylesheet" href="/css/detailsPage.css" />
             </head>
-
+            <img className='m-a db hero' src='https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/b8/46/6d/london-stock.jpg' alt='hero'/>
 
             <div id='overlay'></div>
             <dialog id='window' className='rounded'>
@@ -74,7 +79,7 @@ const detailsPage = ({data}) => {
                 
             </main>
             <script src='/scripts/detailsPage.js'/>
-            
+            <script src='/scripts/indexPage.js'/>
         </Default>
     );
 };
