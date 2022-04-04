@@ -7,6 +7,22 @@ const detailsPage = ({data}) => {
         <h3 className='inactive'>No comments yet!</h3>
     );
 
+    let ratingData = (
+        <h3 className='inactive'>No ratings yet!</h3>
+    );
+
+    if (data.comments?.length > 0) {
+        let sumRatings = data.comments.reduce((total, el) => total + el.stars, 0);
+        let averageRating = Math.round(sumRatings / data.comments.length);
+        let stars = '';
+        for (let i = 0; i < averageRating; i++)
+            stars += '⭐️'
+        ratingData = (
+            <h3>{stars}</h3>
+        );
+    }
+    //⭐️
+
     if (data.comments?.length > 0) {
         commentData = data.comments?.map( rant => {
             return (
@@ -55,6 +71,7 @@ const detailsPage = ({data}) => {
                 <div className='container w-60 ptb-2'>
                     <div className='container m-a ta-c d-ib w-50'>
                         <h2 className='db w-100 ft-4' key={`${data.name}Title`}>{data.name}</h2>
+                        {ratingData}
                         <p className='ft-2 w-100' key={`${data.city}`}>City: {data.city}</p>
                         <p className='ft-2 w-100' key={`${data.state}`}>State: {data.state}</p>
                         <p className='ft-2 w-100' key={`${data.cuisines}`}>Cuisines: {data.cuisines}</p>
